@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 — Higher or Lower</title>
+
+  <link rel="stylesheet" href="task1.css">
+
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <span class="brand">✿ Assignment 5 · Task 1</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>🎮 Higher or Lower</h1>
+      <p>Is the next gadget more expensive or cheaper? Equal prices count as a right guess.</p>
+    </section>
+
+    <section class="card game" id="game" aria-label="Game">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Lives</span>
+          <strong class="stat-value hearts" id="lives"></strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">🔥 Streak</span>
+          <strong class="stat-value" id="streak"></strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">🏆 Best</span>
+          <strong class="stat-value" id="best"></strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Round</span>
+          <strong class="stat-value" id="round"></strong>
+        </div>
+      </div>
+
+      <div class="goal">
+        <label for="goal-bar" id="goal-label"></label>
+        <progress id="goal-bar" value="0" max="1"></progress>
+      </div>
+
+      <div class="duel">
+        <div class="item">
+          <div class="item-emoji" id="current-emoji" aria-hidden="true"></div>
+          <div class="item-name" id="current-name"></div>
+          <div class="item-price" id="current-price"></div>
+        </div>
+
+        <div class="vs" aria-hidden="true">VS</div>
+
+        <div class="item item--hidden">
+          <div class="item-emoji" id="next-emoji" aria-hidden="true"></div>
+          <div class="item-name" id="next-name"></div>
+          <div class="item-price">?</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="btn" id="btn-higher">Higher ▲</button>
+        <button type="button" class="btn" id="btn-lower">Lower ▼</button>
+        <button type="button" class="btn btn--ghost" id="btn-restart">↻ Restart</button>
+      </div>
+
+      <p class="message message--info" id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Last 5 rounds</h2>
+      <ul class="log" id="log"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">Assignment 5 · JavaScript Basics</footer>
+</body>
+</html>

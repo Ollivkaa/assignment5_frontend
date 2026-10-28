@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 — Pink Board</title>
+
+  <link rel="stylesheet" href="task2.css">
+
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html">✿ Pink Board</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="task1.html">Task 1</a>
+      <a href="task2.html" aria-current="page">Task 2</a>
+      <a href="task3.html">Task 3</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1 class="page-title">My task list</h1>
+    <p class="lead">Plan your project work. Move cards with the arrows. The "In progress" column holds at most 3 cards.</p>
+
+    <section class="filters" aria-label="Search and filters">
+      <div class="field">
+        <label for="search">Search by name</label>
+        <input type="search" id="search" placeholder="e.g. logo">
+      </div>
+      <div class="field">
+        <label for="tag-filter">Tag</label>
+        <select id="tag-filter"></select>
+      </div>
+      <div class="field">
+        <label for="sort-select">Priority</label>
+        <select id="sort-select">
+          <option value="default">Default order</option>
+          <option value="high">High first</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="progress-box">
+      <progress id="progress" value="0" max="1" aria-label="Finished cards"></progress>
+      <p class="progress-text" id="progress-text"></p>
+    </div>
+
+    <form class="add-form" id="add-form" aria-label="Add a card" novalidate>
+      <div class="field">
+        <label for="new-title">New card</label>
+        <input type="text" id="new-title" placeholder="Card title">
+      </div>
+      <div class="field">
+        <label for="new-priority">Priority</label>
+        <select id="new-priority">
+          <option value="1">High</option>
+          <option value="2" selected>Medium</option>
+          <option value="3">Low</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="new-tag">Tag</label>
+        <select id="new-tag"></select>
+      </div>
+      <button type="submit" class="btn">＋ Add card</button>
+    </form>
+
+    <p class="message message--info" id="message" role="status" aria-live="polite"></p>
+    <p class="empty empty--wide" id="nothing-found" hidden></p>
+
+    <div class="board" id="board">
+      <section class="column column--todo" aria-labelledby="h-todo">
+        <h2 id="h-todo"><span>To do</span><span class="count" id="count-todo"></span></h2>
+        <div class="cards" id="col-todo"></div>
+      </section>
+
+      <section class="column column--doing" aria-labelledby="h-doing">
+        <h2 id="h-doing"><span>In progress</span><span class="count" id="count-doing"></span></h2>
+        <div class="cards" id="col-doing"></div>
+      </section>
+
+      <section class="column column--done" aria-labelledby="h-done">
+        <h2 id="h-done"><span>Done</span><span class="count" id="count-done"></span></h2>
+        <div class="cards" id="col-done"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">Assignment 5 · JavaScript Basics</footer>
+</body>
+</html>
